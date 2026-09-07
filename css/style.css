@@ -1,0 +1,537 @@
+/* --- Variables y Configuración Global --- */
+:root {
+    --primary: #1b4d3e;   /* Verde profesional / oscuro */
+    --accent: #25d366;    /* Verde WhatsApp */
+    --bg-light: #f9f9f9;  /* Fondo claro */
+    --text-color: #333333;/* Color de texto principal */
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+/* --- Cabecera y Portada --- */
+.header {
+    background-color: var(--primary);
+}
+
+.portada-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.portada-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --- Barra de Menú Horizontal (Gris Cálido) --- */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e8e6e1;
+    padding: 10px 15px;
+    gap: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #2c3e35;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: #d5d2cc;
+}
+
+.btn-menu-contacto {
+    background-color: var(--primary);
+    color: #ffffff !important;
+}
+
+.btn-menu-contacto:hover {
+    background-color: #123429;
+}
+
+/* --- Sección Hero (Principal) --- */
+.hero {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 1.5rem;
+}
+
+.hero h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* --- Botón de WhatsApp --- */
+.btn-whatsapp {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- Secciones Generales --- */
+.section {
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+/* --- Tarjetas de Servicios --- */
+.services-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: left;
+    border-left: 4px solid var(--primary);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.about-text {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+/* --- Sección del Técnico --- */
+.tecnico-section {
+    background-color: #1a1a1a;
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+    position: relative;
+    height: 90px;
+    margin: 0;
+}
+
+.tecnico-box {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 4px 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    will-change: transform;
+}
+
+.tecnico-box img {
+    height: 60px;
+    display: block;
+}
+
+/* --- Pie de Página --- */
+.business-footer {
+    background-color: #1a1a1a; 
+    background-image: url('../imagenes/fondo.png'); 
+    background-size: cover;          
+    background-position: center;     
+    background-repeat: no-repeat; 
+    color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 0;                   
+    border-top: 3px solid #4CAF50;
+    position: relative;
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    position: relative;
+    z-index: 2; 
+}
+
+.footer-info {
+    flex: 1.2;
+    min-width: 280px;
+    text-align: left;
+}
+
+.footer-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    color: #ffffff;
+}
+
+.footer-info .slogan {
+    color: #aaaaaa;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    color: #dddddd;
+    font-size: 14px;
+}
+
+.contact-row span.material-icons {
+    color: #4CAF50;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.contact-row a {
+    color: #dddddd;
+    text-decoration: none;
+}
+
+.footer-bottom-bar {
+    max-width: 800px;
+    margin: 15px auto 0 auto;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #888888;
+    font-size: 11px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Mapa de Cobertura --- */
+.map-container {
+    margin-top: 1.5rem;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* --- Servicios y Pasos --- */
+.compact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.mini-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.mini-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.mini-card p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+.steps-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.step-badge {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    text-align: left;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.step-num {
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    font-size: 0.8rem;
+}
+
+/* --- Preguntas Frecuentes --- */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #4CAF50;
+    border-radius: 10px;
+    padding: 14px 18px;
+    list-style: none;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+    border-color: #4CAF50;
+    box-shadow: 0 6px 15px rgba(76, 175, 80, 0.12);
+}
+
+.faq-item summary {
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    color: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.faq-item summary::after {
+    content: '+';
+    color: #4CAF50;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-width: 18px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+    content: '-';
+}
+
+.faq-item p {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #edf2f7;
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* --- Sección de Reseñas --- */
+.reviews-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.reviews-header h2 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.rating-badge {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.review-form-card {
+    background: #ffffff;
+    border: 1px solid #319470;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    margin-bottom: 20px;
+}
+
+.star-rating-input {
+    display: flex;
+    gap: 8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #cbd5e1;
+}
+
+.star-rating-input .star.active {
+    color: #f59e0b;
+}
+
+.review-form-card textarea {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 0.9rem;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+    margin-bottom: 10px;
+}
+
+.review-form-card textarea:focus {
+    border-color: #4CAF50;
+}
+
+.btn-review-submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-review-submit:hover {
+    background-color: #43a047;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.review-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #4CAF50;
+    border-radius: 10px;
+    padding: 12px 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    text-align: left;
+}
+
+.review-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.review-stars {
+    color: #f59e0b;
+    font-size: 0.9rem;
+}
+
+.review-date {
+    color: #888;
+    font-size: 0.75rem;
+}
+
+.review-card p {
+    color: #333;
+    font-size: 0.9rem;
+    margin: 0;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.empty-reviews {
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 15px;
+}
+
