@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Exterminador | Control de Plagas en Cuernavaca</title>
+    
+    <!-- Librerías de Estilos -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Hoja de Estilos Externa -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Estilos específicos limpios para FAQ, Galería y Animación del Técnico -->
+    <style>
+      /* Galería de Imágenes */
+      #expandedImgContainer {
+        position: relative;
+        display: none;
+        margin-bottom: 16px;
+      }
+      #expandedImgContainer img {
+        width: 100%;
+        max-height: 450px;
+        object-fit: contain;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+      .close-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+      .close-btn:hover {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+
+      /* Preguntas Frecuentes (FAQ) */
+      .faq-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 16px;
+      }
+      .faq-button {
+        text-align: left !important;
+        font-weight: bold;
+        background-color: #f1f1f1 !important;
+        transition: background-color 0.3s;
+      }
+      .faq-button:hover {
+        background-color: #e2e2e2 !important;
+      }
+      .faq-content {
+        display: none;
+        background-color: #ffffff;
+        padding: 16px;
+        border-left: 4px solid #4CAF50;
+        margin-bottom: 8px;
+      }
+
+      /* Animación CSS Pura del Técnico Fumigador */
+      .tecnico-section {
+        background-color: #222222;
+        width: 100%;
+        padding: 20px 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+      .tecnico-box {
+        background-color: #ffffff;
+        padding: 8px 12px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+      .tecnico-box img {
+        height: 70px;
+        display: block;
+      }
+
+      /* Estilo Pie de Página (Tarjeta) */
+      .business-footer {
+        background-color: #222222;
+        color: #ffffff;
+        padding: 40px 20px;
+        border-top: 4px solid #4CAF50;
+      }
+      .footer-container {
+        max-width: 800px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+      }
+      .footer-info {
+        flex: 1.2;
+        min-width: 280px;
+        margin: auto;
+        text-align: left;
+      }
+      .footer-info h3 {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+        color: #ffffff;
+      }
+      .footer-info .slogan {
+        color: #aaaaaa;
+        font-size: 14px;
+        font-style: italic;
+        margin-bottom: 20px;
+      }
+      .contact-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        color: #dddddd;
+        font-size: 15px;
+      }
+      .contact-row span.material-icons {
+        color: #4CAF50;
+        margin-right: 12px;
+        font-size: 22px;
+      }
+      .contact-row a {
+        color: #dddddd;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .contact-row a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+      .footer-bottom-bar {
+        max-width: 800px;
+        margin: 30px auto 0 auto;
+        padding-top: 15px;
+        border-top: 1px solid #444444;
+        text-align: center;
+        color: #777777;
+        font-size: 12px;
+      }
+    </style>
+</head>
+<body>
+
+<!-- Cabecera y Menú Horizontal -->
+<header class="header">
+    <div class="portada-container">
+        <img src="imagenes/portada.png" alt="Portada El Exterminador" class="portada-img">
+    </div>
+    
+    <nav class="nav-bar">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#productos" class="nav-link">Productos</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#nosotros" class="nav-link btn-menu-contacto">Contacto</a>
+    </nav>
+</header>
+
+<!-- Sección Principal (Hero) -->
+<section class="hero">
+    <h1>Control de Plagas Profesional en Cuernavaca</h1>
+    <p>Soluciones efectivas y seguras para proteger tu hogar, negocio y áreas verdes contra insectos y roedores.</p>
+    <a href="https://wa.me/525530813204?text=Hola,%20vi%20su%20página%20web%20y%20necesito%20más%20información%20sobre%20el%20servicio%20de%20control%20de%20plagas." class="btn-whatsapp" target="_blank">Cotizar por WhatsApp</a>
+</section>
+
+<!-- Sección de Servicios Optimizada -->
+<section class="section" id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <p class="about-text">Soluciones integrales de control de plagas en Cuernavaca y alrededores.</p>
+    
+    <div class="compact-grid">
+        <div class="mini-card">
+            <h3>🏠 Residencial</h3>
+            <p>Protección total para tu hogar y familia.</p>
+        </div>
+        <div class="mini-card">
+            <h3>🏢 Comercial</h3>
+            <p>Cumplimiento normativo para negocios y locales.</p>
+        </div>
+        <div class="mini-card">
+            <h3>🌳 Áreas Verdes</h3>
+            <p>Control especializado en jardines y exteriores.</p>
+        </div>
+        <div class="mini-card">
+            <h3>📦 Almacenes</h3>
+            <p>Erradicación y prevención en bodegas de inventario.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Pasos Optimizada (Proceso) -->
+<section class="section bg-light">
+    <h2>Nuestro Proceso</h2>
+    <div class="steps-horizontal">
+        <div class="step-badge">
+            <span class="step-num">1</span>
+            <div><strong>Inspección:</strong> Localizamos nidos, áreas de oportunidad y definimos el químico preciso.</div>
+        </div>
+        <div class="step-badge">
+            <span class="step-num">2</span>
+            <div><strong>Tratamiento:</strong> Aplicación profesional con máximo cuidado y seguridad.</div>
+        </div>
+        <div class="step-badge">
+            <span class="step-num">3</span>
+            <div><strong>Seguimiento:</strong> Recomendaciones preventivas y contacto de control a los 2 meses.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Productos con Pestañas Animadas -->
+<section class="section" id="productos">
+    <h2>Nuestros Productos</h2>
+    <p class="about-text">Soluciones especializadas y totalmente personalizadas para garantizar la solución a sus necesidades.</p>
+    
+    <div class="tabs-container" style="margin-top: 8px;">
+        <div class="w3-bar w3-black" style="display: flex; border-radius: 8px; overflow: hidden; background-color: #2b5840 !important;">
+            <button class="w3-bar-item w3-button tablink w3-green" style="flex: 1;" onclick="openProduct(event, 'interior')">🏠 Interior</button>
+            <button class="w3-bar-item w3-button tablink" style="flex: 1;" onclick="openProduct(event, 'exterior')">🌳 Exterior</button>
+            <button class="w3-bar-item w3-button tablink" style="flex: 1;" onclick="openProduct(event, 'mayoreo')">Mayoreo</button>
+        </div>
+
+        <!-- Contenido Interior -->
+        <div id="interior" class="product-tab w3-container w3-animate-opacity" style="padding-top: 15px;">
+            <div class="card" style="border-left: 4px solid #25d366; margin: 0;">
+                <h3>Protección Segura para tu Hogar</h3>
+                <p>Sin olores molestos: Tratamientos efectivos que no impregnan tu casa.<br>
+                Seguridad: Seguro para niños y mascotas tras un breve secado.<br>
+                Aplicación dirigida: Eliminamos la plaga en su origen, cuidando tus espacios.</p>
+                <p style="color: var(--primary); font-weight: bold; margin-top: 8px;">Presentación: 1 Litro.</p>
+                <a href="https://wa.me/525530813204?text=Hola,%20me%20interesa%20hacer%20un%20pedido%20de%20producto%20para%20Interior%20por%20litro." class="btn-whatsapp" target="_blank" style="display: block; width: 100%; padding: 12px; margin-top: 15px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1rem;">✅ Realizar pedido</a>
+            </div>
+        </div>
+
+        <!-- Contenido Exterior -->
+        <div id="exterior" class="product-tab w3-container w3-animate-opacity" style="display:none; padding-top: 15px;">
+            <div class="card" style="border-left: 4px solid #f39c12; margin: 0;">
+                <h3>Blindaje Contra Plagas</h3>
+                <p>Alta duración: Resiste sol y lluvia, manteniendo tu perímetro protegido.<br>
+                Barrera activa: Evita que las plagas entren a tu casa o negocio.<br>
+                Máxima potencia: Ideal para jardines, bardas y cocheras.</p>
+                <p style="color: var(--primary); font-weight: bold; margin-top: 8px;">Presentación: 1 Litro.</p>
+                <a href="https://wa.me/525530813204?text=Hola,%20me%20interesa%20hacer%20un%20pedido%20de%20producto%20para%20Exterior%20por%20litro." class="btn-whatsapp" target="_blank" style="display: block; width: 100%; padding: 12px; margin-top: 15px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1rem;">✅ Realizar pedido</a>
+            </div>
+        </div>
+      
+        <!-- Contenido Mayoreo -->
+        <div id="mayoreo" class="product-tab w3-container w3-animate-opacity" style="display:none; padding-top: 15px;">
+            <div class="card" style="border-left: 4px solid #1365d7; margin: 0;">
+                <h3>¿Tienes un negocio o proyecto?</h3>
+                <p>¡Suministramos a profesionales! Tenemos precios especiales en venta por volumen.<br>
+                Productos certificados y precios de distribuidor para optimizar tus costos.</p>
+                <p style="color: var(--primary); font-weight: bold; margin-top: 8px;">Presentación: Mayoreo / Volumen.</p>
+                <a href="https://wa.me/525530813204?text=Hola,%20me%20interesa%20hacer%20un%20pedido%20de%20producto%20a%20Mayoreo." class="btn-whatsapp" target="_blank" style="display: block; width: 100%; padding: 12px; margin-top: 15px; background-color: #25d366; color: white; text-align: center; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 1rem;">✅ Realizar pedido</a>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Galería Visual de Productos con Botón X -->
+    <div class="w3-container exp-img-container w3-padding-0 w3-margin-top">
+      <div id="expandedImgContainer">
+        <button class="close-btn" onclick="closeImg()">&times;</button>
+        <img id="expandedImg">
+      </div>
+
+      <div class="w3-row-padding w3-margin-top w3-padding-0">
+        <div class="w3-col s4 w3-container w3-padding-small">
+          <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg(this);">
+            <img src="imagenes/botellas.png" alt="Botellas" style="width:100%; border-radius: 4px;">
+          </a>
+        </div>
+        <div class="w3-col s4 w3-container w3-padding-small">
+          <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg(this);">
+            <img src="imagenes/trampas.png" alt="Trampas y Cebos" style="width:100%; border-radius: 4px;">
+          </a>
+        </div>
+        <div class="w3-col s4 w3-container w3-padding-small">
+          <a href="javascript:void(0)" class="w3-hover-opacity" onclick="openImg(this);">
+            <img src="imagenes/galones.png" alt="Galones" style="width:100%; border-radius: 4px;">
+          </a>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Sección de Zonas de Cobertura -->
+<section class="section bg-light">
+    <h2>Zonas de Cobertura</h2>
+    <p class="about-text">Brindamos servicio profesional de control de plagas de manera rápida y puntual en:</p>
+    
+    <div class="services-container">
+        <div class="card" style="border-left-color: #25d366;">
+            <h3>Cuernavaca y Municipios Colindantes</h3>
+            <p>Atención especializada en <strong>Cuernavaca</strong>, <strong>CIVAC</strong>, <strong>Jiutepec</strong>, <strong>Emiliano Zapata</strong>, <strong>Temixco</strong> y zonas residenciales o comerciales de los alrededores.</p>
+        </div>
+    </div>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60312.38459424726!2d-99.2621045053711!3d18.921352499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdd8972e299b6f%3A0xb3574a7d65b1aa92!2sCuernavaca%2C%28Morelos!5e0!3m2!1ses-419!4f13.1!3m2!1sm2!1ses!2smx" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<!-- Sección Preguntas frecuentes -->
+<section class="section" id="faq">
+    <div class="w3-container faq-container">
+      <h2 class="w3-center w3-text-dark-gray w3-margin-bottom"><b>Preguntas Frecuentes</b></h2>
+      <p class="w3-center w3-text-grey w3-margin-bottom">Haz clic en cualquier pregunta para ver la respuesta detallada:</p>
+
+      <details class="faq-item">
+        <summary>1. ¿Los productos son seguros para aplicarse si hay niños y mascotas en casa?</summary>
+        <p>Sí, nuestros productos son seguros una vez que el tratamiento ha completado su breve tiempo de secado y se siguen las indicaciones de uso recomendadas.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>2. ¿Los insecticidas dejan malos olores o manchas en las superficies?</summary>
+        <p>No, están formulados para ser inodoros y no manchan paredes, pisos ni muebles al aplicarse de manera correcta.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>3. ¿Qué plagas se pueden controlar con sus servicios?</summary>
+        <p>Controlamos plagas urbanas comunes como cucarachas, hormigas, arañas, alacranes, chinches y roedores.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>4. ¿Cómo debo aplicar el producto líquido comprado?</summary>
+        <p>El atomizador viene listo para usarse. Solo debes aplicarlo de manera directa en rincones, zoclos, orillas y posibles zonas de refugio de los insectos.</p>
+      </details>
+    </div>
+</section>
+
+<!-- Sección de Testimonios y Reseñas -->
+<section class="section" id="testimonios">
+  <div class="w3-container reviews-container">
+    <div class="reviews-header">
+      <h2><b>Lo que opinan nuestros clientes</b></h2>
+      <div id="promedioBadge" class="rating-badge">
+        ⭐ <span id="promedioNum">5.0</span> <small id="totalResenas">(0)</small>
+      </div>
+    </div>
+    <p class="section-subtitle">Comparte tu experiencia de forma anónima:</p>
+
+    <!-- Formulario para dejar reseña -->
+    <div class="review-form-card">
+      <div class="star-rating-input" id="starInput">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+      <input type="hidden" id="selectedRating" value="5">
+      <textarea id="reviewText" placeholder="Escribe aquí tu experiencia con el servicio..." rows="3" maxlength="250"></textarea>
+      <button onclick="guardarResena()" class="btn-review-submit">Guardar opinión</button>
+    </div>
+
+    <!-- Contenedor donde se listarán las opiniones -->
+    <div id="listaResenas" class="reviews-list"></div>
+  </div>
+</section>
+
+<!-- Sección Sobre Nosotros -->
+<section id="nosotros" class="section bg-light">
+    <h2>¿Por qué elegirnos?</h2>
+    <p class="about-text">En <strong>El Exterminador</strong> operamos en Cuernavaca, Morelos, ofreciendo un servicio profesional enfocado en la tranquilidad de nuestros clientes. Utilizamos técnicas precisas y productos de la más alta calidad.</p>
+</section>
+
+<!-- Animación del Técnico Fumigador -->
+<div style="background-color: #1a1a1a; width: 100%; padding: 10px 0; overflow: hidden; position: relative; height: 95px; margin: 0;">
+  <div id="tecnicoBox" style="position: absolute; left: 0px; top: 10px; background-color: #ffffff; padding: 5px 10px; border-radius: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.3); will-change: left;">
+    <img id="tecnicoGif" src="imagenes/may.gif" alt="Técnico fumigando" style="height: 65px; display: block;">
+  </div>
+</div>
+
+<!-- Único Pie de Página -->
+<footer class="business-footer">
+  <div class="footer-container">
+    <div class="footer-info">
+      <h3>Control de Plagas<br>El Exterminador</h3>
+      <p class="slogan">Cazamos la plaga, protegemos tu hogar</p>
+      
+      <div class="contact-row">
+        <span class="material-icons">location_on</span>
+        <span>Servicio en Cuernavaca y alrededores</span>
+      </div>
+
+      <div class="contact-row">
+        <span class="material-icons">phone_iphone</span>
+        <a href="tel:5530813204">55 3081 3204</a>
+      </div>
+
+      <div class="contact-row">
+        <span class="material-icons">call</span>
+        <a href="tel:7771105964">77 7110 5964</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom-bar">
+    <p>© 2026 El Exterminador. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- Archivo de Script Único -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
